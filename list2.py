@@ -5,7 +5,11 @@ Kenzie assignment: List2
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+
+from heapq import merge
+__author__ = "Mike"
+# received some reference help from https://stackoverflow.com/questions/3460161/remove-adjacent-duplicate-elements-from-a-list
+# and https://www.geeksforgeeks.org/python-combining-two-sorted-lists/
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -28,8 +32,13 @@ __author__ = "???"
 
 
 def remove_adjacent(nums):
-    # your code here
-    return
+    i = 1
+    while i < len(nums):
+        if nums[i] == nums[i-1]:
+            nums.pop(i)
+            i -= 1
+        i += 1
+    return nums
 
 
 # E. linear_merge
@@ -44,8 +53,8 @@ def remove_adjacent(nums):
 
 
 def linear_merge(list1, list2):
-    # your code here
-    return
+    res = list(merge(list1, list2))
+    return res
 
 
 # Provided simple test() function used in main() to print
