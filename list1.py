@@ -69,9 +69,7 @@ def front_x(words):
 def sort_last(tuples):
     def myFunc(e):
         return e[-1]
-
     tuples.sort(key=myFunc)
-
     return tuples
 
 
